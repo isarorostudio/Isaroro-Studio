@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Creativo | Isaroro Studio ✨</title>
+    
+    <!-- Scripts: Tailwind y Swiper (Para los Sliders) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Outfit', sans-serif; background-color: #ffffff; scroll-behavior: smooth; }
+        
+        .text-gradient {
+            background: linear-gradient(to right, #6D28D9, #DB2777);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glow-purple { background: radial-gradient(circle, rgba(109, 40, 217, 0.08) 0%, rgba(255,255,255,0) 70%); }
+        .glow-pink { background: radial-gradient(circle, rgba(219, 39, 119, 0.06) 0%, rgba(255,255,255,0) 70%); }
+
+        .portfolio-card {
+            border-radius: 55px;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid #f1f5f9;
+            transition: all 0.4s ease;
+        }
+
+        /* Estilo de los Sliders */
+        .swiper { width: 100%; height: 100%; }
+        .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
+        
+        /* Personalización de los puntitos del slider */
+        .swiper-pagination-bullet-active {
+            background: #DB2777 !important;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl px-6 md:px-12 py-5 flex justify-between items-center border-b border-gray-50">
+        <div class="flex items-center gap-2 font-bold text-xl text-[#2d1557] uppercase tracking-tighter">
+            <div class="w-9 h-9 bg-gradient-to-tr from-purple-600 to-pink-500 rounded-xl flex items-center justify-center text-white italic text-[11px] shadow-lg shadow-purple-200">IS</div>
+            <span class="hidden sm:block">Isaroro Studio</span>
+        </div>
+        <a href="index.html" class="text-xs font-bold uppercase tracking-widest text-[#4c1d95]">Regresar a Tienda</a>
+    </nav>
+
+    <!-- HERO -->
+    <header class="relative pt-40 pb-16 px-6 text-center">
+        <div class="absolute -top-20 -left-20 w-[600px] h-[600px] glow-purple -z-10"></div>
+        <div class="absolute top-40 -right-20 w-[600px] h-[600px] glow-pink -z-10"></div>
+
+        <span class="inline-block border border-pink-100 text-pink-500 text-[10px] font-bold px-4 py-1.5 rounded-full uppercase mb-6 tracking-[0.25em] bg-pink-50/50 uppercase">Galería Deslizable</span>
+        <h1 class="text-6xl md:text-8xl font-bold text-[#2d1557] mb-8 tracking-tighter">
+            Portafolio<br><span class="text-gradient">Creativo</span>
+        </h1>
+        <p class="text-gray-400 max-w-lg mx-auto font-light">
+            Desliza cada cuadro para ver más imágenes de cada proyecto.
+        </p>
+    </header>
+
+    <!-- CUADRICULA DE 18 SLIDERS -->
+    <section class="max-w-7xl mx-auto px-6 mb-32">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            
+            <!-- CARD 1 -->
+            <div class="portfolio-card shadow-sm hover:shadow-2xl transition-all">
+                <div class="aspect-square bg-slate-100 relative">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="papa-noel.jpeg" alt=""></div>
+                            <div class="swiper-slide"><img src="Interior-papa.jpeg" alt=""></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="p-10">
+                    <p class="text-[10px] font-bold text-pink-500 uppercase tracking-widest mb-2">Libros</p>
+                    <h3 class="text-xl font-bold text-[#2d1557]">La Aventura del dron de Papa Noel</h3>
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="portfolio-card shadow-sm hover:shadow-2xl transition-all">
+                <div class="aspect-square bg-slate-100 relative">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="Kwai.jpeg" alt=""></div>
+                            <div class="swiper-slide"><img src="Interior-kwai.jpeg" alt=""></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="p-10">
+                    <p class="text-[10px] font-bold text-purple-500 uppercase tracking-widest mb-2">Libros</p>
+                    <h3 class="text-xl font-bold text-[#2d1557]">Kwai Study Dolls</h3>
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="portfolio-card shadow-sm hover:shadow-2xl transition-all">
+                <div class="aspect-square bg-slate-100 relative">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="Fairy.png" alt=""></div>
+                            <div class="swiper-slide"><img src="Interior-fairy.png" alt=""></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="p-10">
+                    <p class="text-[10px] font-bold text-blue-500 uppercase tracking-widest mb-2">Libros</p>
+                    <h3 class="text-xl font-bold text-[#2d1557]">Fairies, fun and Fantasy</h3>
+                </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="portfolio-card shadow-sm hover:shadow-2xl transition-all">
+                <div class="aspect-square bg-slate-100 relative">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="Actividades.png" alt=""></div>
+                            <div class="swiper-slide"><img src="Interior.png" alt=""></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="p-10">
+                    <p class="text-[10px] font-bold text-pink-500 mb-2">Libros</p>
+                    <h3 class="text-xl font-bold text-[#2d1557]">Libro didáctico de actividades</h3>
+                </div>
+            </div>
+            
+            <!-- CARD 5 -->
+            <div class="portfolio-card shadow-sm hover:shadow-2xl transition-all">
+                <div class="aspect-square bg-slate-100 relative">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="oso.png" alt=""></div>
+                            <div class="swiper-slide"><img src="Coloring.png" alt=""></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="p-10">
+                    <p class="text-[10px] font-bold text-yellow-500 mb-2">Libros</p>
+                    <h3 class="text-xl font-bold text-[#2d1557]">Valentine's Day</h3>
+                </div>
+            </div>
+
+            <!-- CARD 6 -->
+            <div class="portfolio-card shadow-sm hover:shadow-2xl transition-all">
+                <div class="aspect-square bg-slate-100 relative">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="Sofia.png" alt=""></div>
+                            <div class="swiper-slide"><img src="Interior-mono.png" alt=""></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="p-10">
+                    <p class="text-[10px] font-bold text-purple-500 mb-2">Libros</p>
+                    <h3 class="text-xl font-bold text-[#2d1557]">La aventura de Sofia en la selva</h3>
+                </div>
+            </div>
+
+            <!-- CARD 7 -->
+            <div class="portfolio-card shadow-sm hover:shadow-2xl transition-all">
+                <div class="aspect-square bg-slate-100 relative">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="Mounstruito.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="Mounstruito-Interior.jpg" alt=""></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="p-10">
+                    <p class="text-[10px] font-bold text-pink-500 mb-2">Ilustración</p>
+                    <h3 class="text-xl font-bold text-[#2d1557]">Proyecto Monstruito</h3>
+                </div>
+            </div>
+
+            <!-- CARD 8 -->
+            <div class="portfolio-card shadow-sm hover:shadow-2xl transition-all">
+                <div class="aspect-square bg-slate-100 relative">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="Hada.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="Hada-Interior.jpg" alt=""></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="p-10">
+                    <p class="text-[10px] font-bold text-blue-500 mb-2">Ilustración</p>
+                    <h3 class="text-xl font-bold text-[#2d1557]">Hada del Bosque</h3>
+                </div>
+            </div>
+
+            <!-- CARD 9 -->
+            <div class="portfolio-card shadow-sm hover:shadow-2xl transition-all">
+                <div class="aspect-square bg-slate-100 relative">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="Cinnamonroll.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="Cinnamonroll-Interior.jpg" alt=""></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="p-10">
+                    <p class="text-[10px] font-bold text-yellow-500 mb-2">Ilustración</p>
+                    <h3 class="text-xl font-bold text-[#2d1557]">Cinnamonroll FanArt</h3>
+                </div>
+            </div>
+
+            <!-- CARD 10 -->
+            <div class="portfolio-card shadow-sm hover:shadow-2xl transition-all">
+                <div class="aspect-square bg-slate-100 relative">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="Capibara.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="Capibara-Interior.jpg" alt=""></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="p-10">
+                    <p class="text-[10px] font-bold text-pink-500 mb-2">Ilustración</p>
+                    <h3 class="text-xl font-bold text-[#2d1557]">Capibara Kwai</h3>
+                </div>
+            </div>
+
+            <!-- CARD 11 -->
+            <div class="portfolio-card shadow-sm hover:shadow-2xl transition-all">
+                <div class="aspect-square bg-slate-100 relative">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="Osito.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="Osito-Interior.jpg" alt=""></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="p-10">
+                    <p class="text-[10px] font-bold text-purple-500 mb-2">Ilustración</p>
+                    <h3 class="text-xl font-bold text-[#2d1557]">Osito con su amigo</h3>
+                </div>
+            </div>
+
+            <!-- CARD 12 -->
+            <div class="portfolio-card shadow-sm hover:shadow-2xl transition-all">
+                <div class="aspect-square bg-slate-100 relative">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="Kuromi.png" alt=""></div>
+                            <div class="swiper-slide"><img src="Kuromi-Interior.png" alt=""></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="p-10">
+                    <p class="text-[10px] font-bold text-blue-500 mb-2">Diseño 3D</p>
+                    <h3 class="text-xl font-bold text-[#2d1557]">Kuromi 3D</h3>
+                </div>
+            </div>
+
+            <!-- CARD 13 -->
+            <div class="portfolio-card shadow-sm hover:shadow-2xl transition-all">
+                <div class="aspect-square bg-slate-100 relative">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="hello.png" alt=""></div>
+                            <div class="swiper-slide"><img src="hello-Interior.png" alt=""></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="p-10">
+                    <p class="text-[10px] font-bold text-pink-500 mb-2">Diseño 3D</p>
+                    <h3 class="text-xl font-bold text-[#2d1557]">Hello Kitty</h3>
+                </div>
+            </div>
+
+            <!-- CARD 14 -->
+            <div class="portfolio-card shadow-sm hover:shadow-2xl transition-all">
+                <div class="aspect-square bg-slate-100 relative">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="mounstruo.png" alt=""></div>
+                            <div class="swiper-slide"><img src="mounstruo-Interior.png" alt=""></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="p-10">
+                    <p class="text-[10px] font-bold text-purple-500 mb-2">Diseño 3D</p>
+                    <h3 class="text-xl font-bold text-[#2d1557]">Oso Kwai 3D</h3>
+                </div>
+            </div>
+
+            <!-- CARD 15 -->
+            <div class="portfolio-card shadow-sm hover:shadow-2xl transition-all">
+                <div class="aspect-square bg-slate-100 relative">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="Planner.png" alt=""></div>
+                            <div class="swiper-slide"><img src="diciembre.png" alt=""></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="p-10">
+                    <p class="text-[10px] font-bold text-yellow-500 mb-2">Diseños personalizados</p>
+                    <h3 class="text-xl font-bold text-[#2d1557]">Planner mensual 12 meses</h3>
+                </div>
+            </div>
+
+            <!-- CARD 16 -->
+            <div class="portfolio-card shadow-sm hover:shadow-2xl transition-all">
+                <div class="aspect-square bg-slate-100 relative">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="Snoopy.png" alt=""></div>
+                            <div class="swiper-slide"><img src="interior-snoopy.png" alt=""></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="p-10">
+                    <p class="text-[10px] font-bold text-pink-500 mb-2">Diseños personalizados</p>
+                    <h3 class="text-xl font-bold text-[#2d1557]">Calendario Snoopy</h3>
+                </div>
+            </div>
+
+            <!-- CARD 17 -->
+            <div class="portfolio-card shadow-sm hover:shadow-2xl transition-all">
+                <div class="aspect-square bg-slate-100 relative">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="Horario.png" alt=""></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="p-10">
+                    <p class="text-[10px] font-bold text-purple-500 mb-2">Diseños personalizados</p>
+                    <h3 class="text-xl font-bold text-[#2d1557]">Horario de clases personalizado</h3>
+                </div>
+            </div>
+
+            <!-- CARD 18 -->
+            <div class="portfolio-card shadow-sm hover:shadow-2xl transition-all">
+                <div class="aspect-square bg-slate-100 relative">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="Agenda.png" alt=""></div>
+                            <div class="swiper-slide"><img src="Interior-agenda.png" alt=""></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="p-10">
+                    <p class="text-[10px] font-bold text-blue-500 mb-2">Diseños personalizados</p>
+                    <h3 class="text-xl font-bold text-[#2d1557]">Agendas personalizadas de disco "Digital o impresa"</h3>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#1a0b2e] py-20 px-10 text-white rounded-t-[60px] text-center">
+        <h2 class="text-3xl font-bold mb-10 tracking-tighter uppercase">¿Creamos algo juntos?</h2>
+        <a href="https://wa.me/573000000000" class="inline-block bg-[#25D366] text-white px-10 py-4 rounded-full font-bold shadow-xl hover:scale-105 transition-all">WhatsApp 📲</a>
+    </footer>
+
+    <script>
+        // Inicializar todos los Sliders
+        const swiper = new Swiper('.mySwiper', {
+            loop: true, 
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            grabCursor: true, 
+        });
+    </script>
+</body>
+</html>
