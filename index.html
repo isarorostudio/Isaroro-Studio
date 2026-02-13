@@ -1,214 +1,294 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Isaroro Studio ✨ Tienda Oficial</title>
-    
-    <!-- Tailwind CSS y Fuentes -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        body { font-family: 'Outfit', sans-serif; background-color: #ffffff; scroll-behavior: smooth; }
-        
-        .text-gradient {
-            background: linear-gradient(to right, #6D28D9, #DB2777);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Isaroro Studio ✨ Tienda Oficial</title>
+  <link rel="icon" type="image/png" href="logo.png"> <!-- FAVICON AÑADIDO -->
 
-        .glow-purple { background: radial-gradient(circle, rgba(109, 40, 217, 0.08) 0%, rgba(255,255,255,0) 70%); }
-        .glow-pink { background: radial-gradient(circle, rgba(219, 39, 119, 0.06) 0%, rgba(255,255,255,0) 70%); }
+  <!-- Tailwind CSS y Fuentes -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        .cart-sidebar { transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        .cart-sidebar.active { transform: translateX(0); }
-        
-        .product-card:hover { transform: translateY(-10px); transition: all 0.3s ease; }
-    </style>
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: #ffffff;
+      scroll-behavior: smooth;
+    }
+
+    .text-gradient {
+      background: linear-gradient(to right, #6D28D9, #DB2777);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .glow-purple {
+      background: radial-gradient(circle, rgba(109, 40, 217, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+    }
+
+    .glow-pink {
+      background: radial-gradient(circle, rgba(219, 39, 119, 0.06) 0%, rgba(255, 255, 255, 0) 70%);
+    }
+
+    .cart-sidebar {
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .cart-sidebar.active {
+      transform: translateX(0);
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+    }
+  </style>
 </head>
+
 <body class="overflow-x-hidden">
 
-    <!-- BARRA DE NAVEGACIÓN -->
-    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl px-6 md:px-12 py-5 flex justify-between items-center border-b border-gray-50">
-        <div class="flex items-center gap-2 font-bold text-xl text-[#2d1557] uppercase tracking-tighter">
-            <div class="w-9 h-9 bg-gradient-to-tr from-purple-600 to-pink-500 rounded-xl flex items-center justify-center text-white italic text-[11px] shadow-lg shadow-purple-200">IS</div>
-            <span class="hidden sm:block">IsaRoro Studio</span>
-        </div>
-        
-        <div class="flex items-center gap-6">
-            <a href="#especialidades" class="hidden md:block text-sm font-medium text-gray-500 hover:text-purple-600 transition">Tienda</a>
-            <button onclick="toggleCart()" class="relative bg-[#4c1d95] text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-xl shadow-purple-100 flex items-center gap-2 hover:scale-105 transition-all">
-                Mi Carrito
-                <span id="cart-count" class="bg-pink-500 text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-bold">0</span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- SECCIÓN HERO -->
-    <header class="relative pt-48 pb-24 px-6 text-center">
-        <div class="absolute -top-20 -left-20 w-[600px] h-[600px] glow-purple -z-10"></div>
-        <div class="absolute top-40 -right-20 w-[600px] h-[600px] glow-pink -z-10"></div>
-
-        <div class="max-w-4xl mx-auto">
-            <span class="inline-block border border-pink-100 text-pink-500 text-[10px] font-bold px-4 py-1.5 rounded-full uppercase mb-8 tracking-[0.25em] bg-pink-50/50">✨ Bienvenidos a la nueva era</span>
-            <h1 class="text-7xl md:text-9xl font-bold text-[#2d1557] mb-8 tracking-tighter leading-none">
-                IsaRoro<br><span class="text-gradient">Studio</span>
-            </h1>
-            <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 font-light leading-relaxed">
-                Ilustración, agendas digitales y diseño 3D para tu mundo creativo. Evolucionamos para dar vida a tus sueños más coloridos.
-            </p>
-            <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="#especialidades" class="bg-[#4c1d95] text-white px-10 py-5 rounded-[28px] font-bold shadow-2xl shadow-purple-200 hover:bg-black transition-all">Explorar Tienda ↓</a>
-                
-                <!-- CORRECCIÓN AQUÍ: Enlace directo al archivo -->
-                <a href="./portafolio.html" target="_blank" class="bg-white text-gray-600 border border-gray-100 px-10 py-5 rounded-[28px] font-bold hover:bg-gray-50 transition-all shadow-sm">
-                    Ver Portafolio
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <!-- ESPECIALIDADES -->
-    <section id="especialidades" class="py-24 px-6 max-w-7xl mx-auto">
-        <h2 class="text-4xl font-bold text-[#2d1557] text-center mb-16 tracking-tight">Especialidades de IsaRoro</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div class="product-card bg-pink-50/30 p-9 rounded-[50px] border border-pink-100 flex flex-col items-start transition-all">
-                <div class="w-16 h-16 bg-pink-500 rounded-3xl flex items-center justify-center text-white text-3xl mb-8 shadow-xl shadow-pink-100">🎨</div>
-                <h3 class="text-xl font-bold text-[#2d1557] mb-2 leading-tight">Ilustración Digital</h3>
-                <p class="text-gray-400 text-sm mb-8 flex-grow">Personajes vibrantes y mundos de ensueño para tu marca.</p>
-                <div class="w-full flex justify-between items-center mt-auto">
-                    <span class="font-bold text-xl text-[#2d1557]">$35.000</span>
-                    <button onclick="addToCart('Ilustración Digital', 35000)" class="text-[10px] font-bold uppercase tracking-widest text-pink-500 hover:scale-110 transition">Añadir +</button>
-                </div>
-            </div>
-            
-            <div class="product-card bg-purple-50/30 p-9 rounded-[50px] border border-purple-100 flex flex-col items-start transition-all">
-                <div class="w-16 h-16 bg-purple-600 rounded-3xl flex items-center justify-center text-white text-3xl mb-8 shadow-xl shadow-purple-100">📅</div>
-                <h3 class="text-xl font-bold text-[#2d1557] mb-2 leading-tight">Agendas Digitales</h3>
-                <p class="text-gray-400 text-sm mb-8 flex-grow">Organiza tu día con propósito e impecable estética.</p>
-                <div class="w-full flex justify-between items-center mt-auto">
-                    <span class="font-bold text-xl text-[#2d1557]">$45.000</span>
-                    <button onclick="addToCart('Agenda Digital', 45000)" class="text-[10px] font-bold uppercase tracking-widest text-purple-600 hover:scale-110 transition">Añadir +</button>
-                </div>
-            </div>
-
-            <div class="product-card bg-yellow-50/30 p-9 rounded-[50px] border border-yellow-100 flex flex-col items-start transition-all">
-                <div class="w-16 h-16 bg-yellow-500 rounded-3xl flex items-center justify-center text-white text-3xl mb-8 shadow-xl shadow-yellow-100">📚</div>
-                <h3 class="text-xl font-bold text-[#2d1557] mb-2 leading-tight">Libros Colorear</h3>
-                <p class="text-gray-400 text-sm mb-8 flex-grow">Relájate y dale vida a nuestras ilustraciones.</p>
-                <div class="w-full flex justify-between items-center mt-auto">
-                    <span class="font-bold text-xl text-[#2d1557]">$25.000</span>
-                    <button onclick="addToCart('Libro Colorear', 25000)" class="text-[10px] font-bold uppercase tracking-widest text-yellow-600 hover:scale-110 transition">Añadir +</button>
-                </div>
-            </div>
-
-            <div class="product-card bg-indigo-50/30 p-9 rounded-[50px] border border-indigo-100 flex flex-col items-start transition-all">
-                <div class="w-16 h-16 bg-blue-600 rounded-3xl flex items-center justify-center text-white text-3xl mb-8 shadow-xl shadow-blue-100">🧊</div>
-                <h3 class="text-xl font-bold text-[#2d1557] mb-2 leading-tight">Diseño 3D</h3>
-                <p class="text-gray-400 text-sm mb-8 flex-grow">Transformando conceptos planos en realidades 3D.</p>
-                <div class="w-full flex justify-between items-center mt-auto">
-                    <span class="font-bold text-xl text-[#2d1557]">$60.000</span>
-                    <button onclick="addToCart('Diseño 3D', 60000)" class="text-[10px] font-bold uppercase tracking-widest text-blue-600 hover:scale-110 transition">Añadir +</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- LANZAMIENTO ESTRELLA -->
-    <section class="max-w-7xl mx-auto px-6 mb-32">
-        <div class="bg-gradient-to-br from-[#4c1d95] to-[#831843] rounded-[60px] p-12 md:p-24 relative overflow-hidden text-white shadow-2xl">
-            <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -mr-20 -mt-20 blur-3xl"></div>
-            <div class="grid md:grid-cols-2 items-center gap-16 relative z-10">
-                <div>
-                    <span class="text-[10px] uppercase font-bold tracking-[0.4em] text-pink-300 mb-6 block">Lanzamiento Estrella</span>
-                    <h2 class="text-5xl md:text-7xl font-bold mb-8 tracking-tighter leading-tight">Agenda Digital 2025: Mundo Creativo</h2>
-                    <p class="text-white/60 text-lg mb-12 font-light leading-relaxed">Incluye stickers exclusivos, guías de lettering y diseño para soñadores.</p>
-                    <div class="flex flex-wrap items-center gap-8">
-                        <span class="text-4xl font-bold">$55.000</span>
-                        <button onclick="addToCart('Agenda 2025 Premium', 55000)" class="bg-white text-black px-12 py-5 rounded-[28px] font-bold hover:bg-pink-500 hover:text-white transition-all shadow-2xl">Añadir al Carrito</button>
-                    </div>
-                </div>
-                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-[55px] aspect-square flex flex-col items-center justify-center p-12 text-center text-[110px]">📖</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-[#1a0b2e] py-24 px-10 text-white rounded-t-[80px]">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
-            <div>
-                <div class="flex items-center gap-3 mb-8">
-                    <div class="w-12 h-12 bg-gradient-to-tr from-purple-600 to-pink-500 rounded-2xl"></div>
-                    <h3 class="text-3xl font-bold tracking-tighter uppercase leading-none">IsaRoro Studio</h3>
-                </div>
-                <p class="text-gray-500 text-sm max-w-xs leading-relaxed italic">"Inspirando tu mundo creativo."</p>
-            </div>
-            
-            <div class="flex flex-col md:items-end gap-8">
-                <div class="flex flex-wrap gap-4">
-                    <a href="https://www.instagram.com/rodriguezroqueisabella/" target="_blank" class="bg-white/5 border border-white/10 px-8 py-3 rounded-2xl text-xs font-bold hover:bg-white hover:text-black transition">Instagram</a>
-                    <a href="https://www.tiktok.com/@isaroro2021" target="_blank" class="bg-white/5 border border-white/10 px-8 py-3 rounded-2xl text-xs font-bold hover:bg-white hover:text-black transition">TikTok</a>
-                </div>
-                <button class="bg-pink-500 text-white px-8 py-4 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-2xl shadow-pink-500/20">🪄 Hablar con IsaRoro</button>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto mt-24 pt-10 border-t border-white/5 text-[10px] text-gray-600 uppercase tracking-widest text-center md:text-left">
-            © 2026 ISARORO STUDIO. HECHO CON ❤️ EN COLOMBIA.
-        </div>
-    </footer>
-
-    <!-- CARRITO LATERAL -->
-    <div id="cart-sidebar" class="cart-sidebar fixed top-0 right-0 h-full w-full md:w-[460px] bg-white shadow-2xl z-[100] p-12 flex flex-col">
-        <div class="flex justify-between items-center mb-12">
-            <h3 class="text-3xl font-bold text-[#2d1557] tracking-tighter uppercase">Tu Pedido</h3>
-            <button onclick="toggleCart()" class="text-gray-300 hover:text-black text-4xl">✕</button>
-        </div>
-        <div id="cart-items" class="flex-grow overflow-y-auto space-y-6"></div>
-        <div class="pt-10 border-t border-gray-100 mt-10">
-            <div class="flex justify-between text-3xl font-bold mb-10 text-[#2d1557]">
-                <span>Total</span>
-                <span id="cart-total">$0</span>
-            </div>
-            <button onclick="checkoutWhatsApp()" class="w-full bg-[#25D366] text-white py-6 rounded-[35px] font-bold text-lg hover:bg-black transition-all shadow-2xl">Finalizar por WhatsApp 📲</button>
-        </div>
+  <!-- BARRA DE NAVEGACIÓN -->
+  <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl px-6 md:px-12 py-5 flex justify-between items-center border-b border-gray-50">
+    <div class="flex items-center gap-2 font-bold text-xl text-[#2d1557] uppercase tracking-tighter">
+      <div class="w-9 h-9 bg-gradient-to-tr from-purple-600 to-pink-500 rounded-xl flex items-center justify-center text-white italic text-[11px] shadow-lg shadow-purple-200">IS</div>
+      <span class="hidden sm:block">IsaRoro Studio</span>
     </div>
 
-    <div id="overlay" onclick="toggleCart()" class="fixed inset-0 bg-black/40 hidden z-[90] backdrop-blur-md transition-opacity"></div>
+    <div class="flex items-center gap-6">
+      <a href="#conoceme" class="hidden md:block text-sm font-medium text-gray-500 hover:text-purple-600 transition">¿Quién soy?</a>
+      <a href="#especialidades" class="hidden md:block text-sm font-medium text-gray-500 hover:text-purple-600 transition">Tienda</a>
+      <button onclick="toggleCart()" class="relative bg-[#4c1d95] text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-xl shadow-purple-100 flex items-center gap-2 hover:scale-105 transition-all">
+        Mi Carrito
+        <span id="cart-count" class="bg-pink-500 text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-bold">0</span>
+      </button>
+    </div>
+  </nav>
 
-    <script>
-        // CONFIGURACIÓN: Cambia aquí tu número
-        const MI_WHATSAPP = "573000000000"; 
+  <!-- SECCIÓN HERO -->
+  <header class="relative pt-48 pb-24 px-6 text-center">
+    <div class="absolute -top-20 -left-20 w-[600px] h-[600px] glow-purple -z-10"></div>
+    <div class="absolute top-40 -right-20 w-[600px] h-[600px] glow-pink -z-10"></div>
 
-        let cart = [];
+    <div class="max-w-4xl mx-auto">
+      <span class="inline-block border border-pink-100 text-pink-500 text-[10px] font-bold px-4 py-1.5 rounded-full uppercase mb-8 tracking-[0.25em] bg-pink-50/50">✨ Bienvenidos a la nueva era</span>
+      <h1 class="text-7xl md:text-9xl font-bold text-[#2d1557] mb-8 tracking-tighter leading-none">
+        IsaRoro<br><span class="text-gradient">Studio</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 font-light leading-relaxed">
+        Ilustración digital, agendas interactivas y diseño 3D. <br>
+        <strong>Arte real hecho por humanos para humanos.</strong>
+      </p>
+      <div class="flex flex-col md:flex-row justify-center gap-4">
+        <a href="#especialidades" class="bg-[#4c1d95] text-white px-10 py-5 rounded-[28px] font-bold shadow-2xl shadow-purple-200 hover:bg-black transition-all">Explorar Tienda ↓</a>
+        <a href="./portafolio.html" target="_blank" class="bg-white text-gray-600 border border-gray-100 px-10 py-5 rounded-[28px] font-bold hover:bg-gray-50 transition-all shadow-sm">
+          Ver Portafolio
+        </a>
+      </div>
+    </div>
+  </header>
 
-        function toggleCart() {
-            document.getElementById('cart-sidebar').classList.toggle('active');
-            document.getElementById('overlay').classList.toggle('hidden');
-            document.body.classList.toggle('overflow-hidden');
-        }
+  <!-- SECCIÓN: CONÓCEME (QUIÉN ES ISARORO) -->
+  <section id="conoceme" class="py-24 px-6 max-w-5xl mx-auto border-t border-gray-50">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div class="bg-slate-50 aspect-square rounded-[60px] flex items-center justify-center text-8xl shadow-inner">🎨</div>
+      <div>
+        <span class="text-pink-500 text-[10px] font-bold uppercase tracking-[0.3em] mb-4 block">Nuestra Esencia</span>
+        <h2 class="text-5xl font-bold text-[#2d1557] mb-8 tracking-tighter leading-tight">De la plastilina a <br>la pantalla</h2>
+        <p class="text-gray-500 leading-relaxed mb-6">
+          Soy <strong>Isabella Rodriguez</strong>, la mente creativa detrás de Isaroro Studio. Mi viaje comenzó con texturas físicas como la plastilina y el lettering manual, lo que me enseñó el valor de lo artesanal.
+        </p>
+        <p class="text-gray-500 leading-relaxed font-bold italic text-purple-600">
+          "Mi valor agregado es la autenticidad: no utilizo Inteligencia Artificial."
+        </p>
+        <p class="text-gray-500 leading-relaxed mt-4">
+          Cada trazo es dibujado desde cero, garantizando que recibas piezas con alma, diseño funcional y una calidad técnica que solo el ojo humano puede perfeccionar.
+        </p>
+      </div>
+    </div>
+  </section>
 
-        function addToCart(name, price) {
-            cart.push({ id: Date.now(), name, price });
-            updateUI();
-            if(!document.getElementById('cart-sidebar').classList.contains('active')) toggleCart();
-        }
+  <!-- SECCIÓN: TRANSPARENCIA (MODELO DE NEGOCIO) -->
+  <section class="py-24 bg-slate-50 px-6 rounded-[80px] mb-20">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl font-bold text-[#2d1557] mb-16 text-center uppercase tracking-tighter">Transparencia Creativa</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <!-- Ilustración -->
+        <div class="bg-white p-12 rounded-[50px] shadow-sm">
+          <div class="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-2xl mb-6">🖌️</div>
+          <h4 class="font-bold text-[#2d1557] mb-4 uppercase text-xs tracking-widest">Ilustración Digital</h4>
+          <p class="text-gray-400 text-xs leading-loose font-light">
+            Creamos imágenes de alta gama. Según tu necesidad, entregamos archivos <strong>Vectores (.ai / .svg)</strong> para gran formato o imágenes <strong>PNG de alta resolución (300dpi)</strong>. Arte 100% original sin IA.
+          </p>
+        </div>
+        <!-- Agendas -->
+        <div class="bg-white p-12 rounded-[50px] shadow-sm">
+          <div class="w-12 h-12 bg-purple-100 rounded-2xl flex items-center justify-center text-2xl mb-6">📅</div>
+          <h4 class="font-bold text-[#2d1557] mb-4 uppercase text-xs tracking-widest">Agendas e Interactivos</h4>
+          <p class="text-gray-400 text-xs leading-loose font-light">
+            Diseñadas para maximizar tu productividad en tablets. Se entrega un <strong>PDF Interactivo</strong> con hipervínculos funcionales para apps como GoodNotes. También incluye versión optimizada para <strong>impresión</strong>.
+          </p>
+        </div>
+        <!-- 3D -->
+        <div class="bg-white p-12 rounded-[50px] shadow-sm">
+          <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-2xl mb-6">🧊</div>
+          <h4 class="font-bold text-[#2d1557] mb-4 uppercase text-xs tracking-widest">Diseño 3D</h4>
+          <p class="text-gray-400 text-xs leading-loose font-light">
+            Modelado profesional en Blender. Entregamos el <strong>Render final (imagen de alta calidad)</strong> para tus proyectos, o el <strong>objeto 3D (.glb / .obj)</strong> si necesitas integrarlo en webs o filtros.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        function removeFromCart(id) {
-            cart = cart.filter(item => item.id !== id);
-            updateUI();
-        }
+  <!-- ESPECIALIDADES (TIENDA) -->
+  <section id="especialidades" class="py-24 px-6 max-w-7xl mx-auto">
+    <h2 class="text-4xl font-bold text-[#2d1557] text-center mb-16 tracking-tight">Especialidades de IsaRoro</h2>
 
-        function updateUI() {
-            const container = document.getElementById('cart-items');
-            const totalEl = document.getElementById('cart-total');
-            const countEl = document.getElementById('cart-count');
-            container.innerHTML = cart.length === 0 ? '<p class="text-gray-400 text-center py-20 font-light italic">Tu carrito está vacío...</p>' : '';
-            let total = 0;
-            cart.forEach(item => {
-                total += item.price;
-                container.innerHTML += `
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- Producto 1 -->
+      <div class="product-card bg-pink-50/30 p-9 rounded-[50px] border border-pink-100 flex flex-col items-start transition-all">
+        <div class="w-16 h-16 bg-pink-500 rounded-3xl flex items-center justify-center text-white text-3xl mb-8 shadow-xl shadow-pink-100">🎨</div>
+        <h3 class="text-xl font-bold text-[#2d1557] mb-2 leading-tight">Ilustración Custom</h3>
+        <p class="text-gray-400 text-xs mb-8 flex-grow">Dibujado a mano digitalmente. Recibes archivos vectoriales de alta resolución.</p>
+        <div class="w-full flex justify-between items-center mt-auto">
+          <span class="font-bold text-xl text-[#2d1557]">$35.000</span>
+          <button onclick="addToCart('Ilustración Custom', 35000)" class="text-[10px] font-bold uppercase tracking-widest text-pink-500 hover:scale-110 transition">Añadir +</button>
+        </div>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="product-card bg-purple-50/30 p-9 rounded-[50px] border border-purple-100 flex flex-col items-start transition-all">
+        <div class="w-16 h-16 bg-purple-600 rounded-3xl flex items-center justify-center text-white text-3xl mb-8 shadow-xl shadow-purple-100">📅</div>
+        <h3 class="text-xl font-bold text-[#2d1557] mb-2 leading-tight">Agenda Interactiva</h3>
+        <p class="text-gray-400 text-xs mb-8 flex-grow">PDF inteligente con links para tablets. Ideal para organización digital premium.</p>
+        <div class="w-full flex justify-between items-center mt-auto">
+          <span class="font-bold text-xl text-[#2d1557]">$45.000</span>
+          <button onclick="addToCart('Agenda Interactiva', 45000)" class="text-[10px] font-bold uppercase tracking-widest text-purple-600 hover:scale-110 transition">Añadir +</button>
+        </div>
+      </div>
+
+      <!-- Producto 3 -->
+      <div class="product-card bg-yellow-50/30 p-9 rounded-[50px] border border-yellow-100 flex flex-col items-start transition-all">
+        <div class="w-16 h-16 bg-yellow-500 rounded-3xl flex items-center justify-center text-white text-3xl mb-8 shadow-xl shadow-yellow-100">📚</div>
+        <h3 class="text-xl font-bold text-[#2d1557] mb-2 leading-tight">Libro para Colorear</h3>
+        <p class="text-gray-400 text-xs mb-8 flex-grow">Recibes un PDF de alta calidad listo para imprimir o colorear en tu iPad.</p>
+        <div class="w-full flex justify-between items-center mt-auto">
+          <span class="font-bold text-xl text-[#2d1557]">$25.000</span>
+          <button onclick="addToCart('Libro Colorear', 25000)" class="text-[10px] font-bold uppercase tracking-widest text-yellow-600 hover:scale-110 transition">Añadir +</button>
+        </div>
+      </div>
+
+      <!-- Producto 4 -->
+      <div class="product-card bg-indigo-50/30 p-9 rounded-[50px] border border-indigo-100 flex flex-col items-start transition-all">
+        <div class="w-16 h-16 bg-blue-600 rounded-3xl flex items-center justify-center text-white text-3xl mb-8 shadow-xl shadow-blue-100">🧊</div>
+        <h3 class="text-xl font-bold text-[#2d1557] mb-2 leading-tight">Assets 3D</h3>
+        <p class="text-gray-400 text-xs mb-8 flex-grow">Modelado original. Entrega de Render final (.png) u objeto (.glb/.obj).</p>
+        <div class="w-full flex justify-between items-center mt-auto">
+          <span class="font-bold text-xl text-[#2d1557]">$60.000</span>
+          <button onclick="addToCart('Diseño 3D', 60000)" class="text-[10px] font-bold uppercase tracking-widest text-blue-600 hover:scale-110 transition">Añadir +</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LANZAMIENTO ESTRELLA -->
+  <section class="max-w-7xl mx-auto px-6 mb-32">
+    <div class="bg-gradient-to-br from-[#4c1d95] to-[#831843] rounded-[60px] p-12 md:p-24 relative overflow-hidden text-white shadow-2xl">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+      <div class="grid md:grid-cols-2 items-center gap-16 relative z-10">
+        <div>
+          <span class="text-[10px] uppercase font-bold tracking-[0.4em] text-pink-300 mb-6 block">Lanzamiento Estrella</span>
+          <h2 class="text-5xl md:text-7xl font-bold mb-8 tracking-tighter leading-tight">Agenda Digital 2026: Mundo Creativo</h2>
+          <p class="text-white/60 text-lg mb-12 font-light leading-relaxed">Incluye stickers exclusivos, guías de lettering y diseño funcional. Recibes el archivo digital instantáneamente tras el pago.</p>
+          <div class="flex flex-wrap items-center gap-8">
+            <span class="text-4xl font-bold">$55.000 <small class="text-xs opacity-50 uppercase tracking-widest">cop</small></span>
+            <button onclick="addToCart('Agenda 2026 Premium', 55000)" class="bg-white text-black px-12 py-5 rounded-[28px] font-bold hover:bg-pink-500 hover:text-white transition-all shadow-2xl">Añadir al Carrito</button>
+          </div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-[55px] aspect-square flex flex-col items-center justify-center p-12 text-center text-[110px]">📖</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#1a0b2e] py-24 px-10 text-white rounded-t-[80px]">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+      <div>
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-12 h-12 bg-gradient-to-tr from-purple-600 to-pink-500 rounded-2xl"></div>
+          <h3 class="text-3xl font-bold tracking-tighter uppercase leading-none">IsaRoro Studio</h3>
+        </div>
+        <p class="text-gray-500 text-sm max-w-xs leading-relaxed italic">"Inspirando tu mundo creativo a través de la ilustración real."</p>
+      </div>
+
+      <div class="flex flex-col md:items-end gap-8">
+        <div class="flex flex-wrap gap-4">
+          <a href="https://www.instagram.com/rodriguezroqueisabella/" target="_blank" class="bg-white/5 border border-white/10 px-8 py-3 rounded-2xl text-xs font-bold hover:bg-white hover:text-black transition">Instagram</a>
+          <a href="https://www.tiktok.com/@isaroro2021" target="_blank" class="bg-white/5 border border-white/10 px-8 py-3 rounded-2xl text-xs font-bold hover:bg-white hover:text-black transition">TikTok</a>
+        </div>
+        <button class="bg-pink-500 text-white px-8 py-4 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-2xl shadow-pink-500/20">🪄 Hablar con IsaRoro</button>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto mt-24 pt-10 border-t border-white/5 text-[10px] text-gray-600 uppercase tracking-widest text-center md:text-left">
+      © 2026 ISARORO STUDIO. HECHO CON ❤️ EN COLOMBIA.
+    </div>
+  </footer>
+
+  <!-- CARRITO LATERAL -->
+  <div id="cart-sidebar" class="cart-sidebar fixed top-0 right-0 h-full w-full md:w-[460px] bg-white shadow-2xl z-[100] p-12 flex flex-col">
+    <div class="flex justify-between items-center mb-12">
+      <h3 class="text-3xl font-bold text-[#2d1557] tracking-tighter uppercase">Tu Pedido</h3>
+      <button onclick="toggleCart()" class="text-gray-300 hover:text-black text-4xl transition">✕</button>
+    </div>
+    <div id="cart-items" class="flex-grow overflow-y-auto space-y-6"></div>
+    <div class="pt-10 border-t border-gray-100 mt-10">
+      <div class="flex justify-between text-3xl font-bold mb-10 text-[#2d1557]">
+        <span>Total</span>
+        <span id="cart-total">$0</span>
+      </div>
+      <button onclick="checkoutWhatsApp()" class="w-full bg-[#25D366] text-white py-6 rounded-[35px] font-bold text-lg hover:bg-black transition-all shadow-2xl">Finalizar por WhatsApp 📲</button>
+    </div>
+  </div>
+
+  <div id="overlay" onclick="toggleCart()" class="fixed inset-0 bg-black/40 hidden z-[90] backdrop-blur-md transition-opacity"></div>
+
+  <script>
+    const MI_WHATSAPP = "573332809983"; // CAMBIA TU NÚMERO AQUÍ
+    let cart = [];
+
+    function toggleCart() {
+      document.getElementById('cart-sidebar').classList.toggle('active');
+      document.getElementById('overlay').classList.toggle('hidden');
+      document.body.classList.toggle('overflow-hidden');
+    }
+
+    function addToCart(name, price) {
+      cart.push({
+        id: Date.now(),
+        name,
+        price
+      });
+      updateUI();
+      if (!document.getElementById('cart-sidebar').classList.contains('active')) toggleCart();
+    }
+
+    function removeFromCart(id) {
+      cart = cart.filter(item => item.id !== id);
+      updateUI();
+    }
+
+    function updateUI() {
+      const container = document.getElementById('cart-items');
+      const totalEl = document.getElementById('cart-total');
+      const countEl = document.getElementById('cart-count');
+      container.innerHTML = cart.length === 0 ? '<p class="text-gray-400 text-center py-20 italic">Tu carrito está vacío...</p>' : '';
+      let total = 0;
+      cart.forEach(item => {
+        total += item.price;
+        container.innerHTML += `
                     <div class="flex justify-between items-center bg-gray-50/50 p-6 rounded-[35px] border border-gray-100">
                         <div>
                             <p class="font-bold text-sm uppercase text-[#2d1557]">${item.name}</p>
@@ -217,18 +297,19 @@
                         <button onclick="removeFromCart(${item.id})" class="text-gray-300 hover:text-red-500 text-xl">✕</button>
                     </div>
                 `;
-            });
-            totalEl.innerText = `$${total.toLocaleString()}`;
-            countEl.innerText = cart.length;
-        }
+      });
+      totalEl.innerText = `$${total.toLocaleString()}`;
+      countEl.innerText = cart.length;
+    }
 
-        function checkoutWhatsApp() {
-            if (cart.length === 0) return alert("Tu carrito está vacío ✨");
-            const total = cart.reduce((sum, item) => sum + item.price, 0);
-            const itemsDetalle = cart.map(i => `- ${i.name} ($${i.price.toLocaleString()})`).join('%0A');
-            const mensaje = `¡Hola IsaRoro Studio! ✨%0A%0AHe visto tu web y quiero comprar:%0A${itemsDetalle}%0A%0A*TOTAL: $${total.toLocaleString()}*%0A%0A¿Me confirmas los datos de pago? 😊`;
-            window.open(`https://wa.me/${MI_WHATSAPP}?text=${mensaje}`, '_blank');
-        }
-    </script>
+    function checkoutWhatsApp() {
+      if (cart.length === 0) return alert("Tu carrito está vacío ✨");
+      const total = cart.reduce((sum, item) => sum + item.price, 0);
+      const itemsDetalle = cart.map(i => `- ${i.name} ($${i.price.toLocaleString()})`).join('%0A');
+      const mensaje = `¡Hola IsaRoro Studio! ✨%0A%0AHe visto tu web y quiero comprar:%0A${itemsDetalle}%0A%0A*TOTAL: $${total.toLocaleString()}*%0A%0A¿Me confirmas los datos de pago por Nequi? 😊`;
+      window.open(`https://wa.me/${3332809983}?text=${mensaje}`, '_blank');
+    }
+  </script>
 </body>
+
 </html>
